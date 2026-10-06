@@ -36,7 +36,7 @@ Boards seen in 3D20 printers include the **FlashForge Coreboard Rev D**. Other r
 | STM32F407ZG chip | The main processor. 1 MB of flash memory |
 | USB Type B port | Serial connection to a PC |
 | Internal micro SD slot | Holds firmware update files and screen images. Under a sliding metal clip |
-| White 3-pin connector next to the USB port, labeled **DMS** | A sensor input. It is **not** the debug port |
+| White 3-pin connector next to the USB port, labeled **DMS** | Doubles as the SWD debug socket for an ST-Link. Pin 1 goes to chip leg 109 (SWCLK), pin 2 to leg 105 (SWDIO). See below |
 | NTC1 and NTC2 pads | Unused thermistor inputs on the 3D20. Ignore them |
 
 ### Internal micro SD card
