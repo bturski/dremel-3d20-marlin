@@ -34,4 +34,4 @@ Once Marlin runs on your printer, you update it from the internal micro SD card.
 
 ## Advanced: what the trigger does
 
-The menu item rewrites a small area of flash at `0x0800C000`, keeping the chip's signature and blanking the status word after it. On the next boot the bootloader sees the blank status, installs `sys/dremel.bin`, and marks the update done. See [how the update flag works](../start-here/printer-reference.md#advanced-how-the-update-flag-works). Without the flag, the bootloader ignores the card. That is why a printer with broken firmware can't fix itself from the SD card.
+The menu item rewrites a small area of flash at `0x0800C000`, keeping the chip's signature and blanking the status word after it. On the next boot the bootloader most likely reads the blank status as "install `sys/dremel.bin`", then marks the update done. See [how the update flag works](../start-here/printer-reference.md#advanced-how-the-update-flag-works). Without the flag, the bootloader ignores the card. That is why a printer with broken firmware can't fix itself from the SD card.
