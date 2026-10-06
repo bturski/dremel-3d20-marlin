@@ -50,7 +50,7 @@ The `.bin` files in the Marlin release are encrypted for the bootloader. The ST-
 
 1. Turn the printer off and unplug it.
 2. Flip it over and remove the six 2.5 mm hex screws from the bottom cover. The cover is held by a grounding strap, so lift it gently.
-3. Find the small **white 3-pin connector next to the USB port**. That is the SWD socket.
+3. Find the SWD socket. **Don't use the white 3-pin connector next to the USB port.** On the Coreboard Rev D it is labeled DMS and is a sensor input, not the debug port. If you aren't sure which pads are SWD, check with a multimeter in continuity mode (board unpowered): SWCLK connects to chip leg 109 and SWDIO to chip leg 105. See [Printer reference](../start-here/printer-reference.md#flash-memory-layout) for the chip.
 4. Find pin 1. Look for a "1", a triangle, or a square solder pad on the board.
 
 The [backup firmware wiki page](https://github.com/moonglow/FlashForge_Marlin/wiki/Backup-printer-firmware) lists this order:
