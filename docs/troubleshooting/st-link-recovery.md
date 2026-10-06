@@ -169,6 +169,10 @@ Look at the first row at `0x08000000`:
 | `FFFFFFFF` | `FFFFFFFF` | Bootloader gone. Go to [Restore the bootloader](#restore-the-bootloader) first |
 | Anything else | | Stop and [ask for help](../contributing.md#reporting-a-problem) before writing |
 
+On the stock Bootloader V1.0 we backed up, the first row starts `20007668 08000285`. If you scroll down, the text **Bootloader V1.0** and **Copyright 2014 by Bosch.** shows up in the text column a few thousand bytes in. Seeing those is a good sign the bootloader is whole.
+
+Keep this backup forever. Besides the bootloader, it holds your chip's own [update flag area](../start-here/printer-reference.md#advanced-how-the-update-flag-works), which is unique to your printer.
+
 !!! danger "Read protection"
     If the software reports **read out protection level 1**, stop. Removing that protection erases the entire chip, bootloader included. Ask in [discussion #101](https://github.com/moonglow/FlashForge_Marlin/discussions/101) before you go on.
 
@@ -240,7 +244,7 @@ We haven't needed this route on the 3D20, so it is untested. If you try it, plea
 
 Only do this if [Check the bootloader](#check-the-bootloader) showed all `FF`.
 
-- **If you have your own backup** from before the problem, write its first 48 KB back to `0x08000000`. This is the best option.
+- **If you have your own backup** from before the problem, write the whole 64 KB file back to `0x08000000`. That restores the bootloader and your own update flag area together. This is the best option.
 - **If you don't,** the maintainer posted a bootloader file, `dreamer_bootloader_v1.4_20161121_no_check.zip`, in [discussion #101](https://github.com/moonglow/FlashForge_Marlin/discussions/101). It is a Dreamer bootloader with the chip ID check removed. Write it to `0x08000000`, then write the firmware to `0x08010000` as in step 7.
 
 !!! warning
@@ -275,6 +279,6 @@ This is how the recovery behind this page went, so you know what to expect.
 | SD card | Putting a correct `dremel.bin` on the internal card did nothing, because the update flag can only be set by working firmware |
 | ST-Link | A clone ST-Link V2. STM32CubeProgrammer never connected to it |
 | Connection | Confirmed the DMS connector reaches chip legs 109 and 105 with a continuity test, then connected with STM32 ST-Link Utility |
-| Backup | Reading the full 1 MB crashed ST-Link Utility. Reading the 64 KB bootloader worked, and it was intact |
+| Backup | Reading the full 1 MB crashed ST-Link Utility. Reading the 64 KB bootloader worked. It was intact: Bootloader V1.0, about 46 KB used, with its update flag area showing no update waiting |
 | Write | The unencrypted v0.15.1 Color UI build, written to `0x08010000` with Program & Verify |
 | Result | The printer booted to Marlin |

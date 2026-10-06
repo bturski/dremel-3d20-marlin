@@ -51,6 +51,7 @@ Archive links with a date point to a specific saved copy. Links marked **latest*
 
 Some facts come from reading the firmware source or testing files directly, not from a web page:
 
+- The bootloader version text, the start screen image names, and the layout of the update flag area come from a 64 KB bootloader backup of a working 3D20. The backup itself isn't published here, since it is Dremel's code.
 - The update flag address `0x0800C000` comes from the "Firmware update trigger" code in the firmware's `menu_advanced.cpp`.
 - The 3D20 firmware settings on [Firmware values](firmware-values.md) come from `Configuration.h` and `Configuration_adv.h` at the `marlin_2.0.x` branch.
 - The board photos, the DMS connector to chip leg mapping, the tool choice for a clone ST-Link V2, and the crash on large reads all come from a real recovery of a 3D20 with a Coreboard Rev D. See [A real recovery](../troubleshooting/st-link-recovery.md#a-real-recovery).

@@ -38,6 +38,6 @@
 
 **SWD.** Serial Wire Debug. The two-wire connection (plus ground) an ST-Link uses. The 3D20 board has a 3-pin SWD socket next to the USB port.
 
-**Update flag.** A small marker in flash memory at `0x0800C000`. When set, the bootloader installs `sys/dremel.bin` from the internal card on the next boot. Marlin's "Firmware update trigger" sets it.
+**Update flag.** A small area of flash memory at `0x0800C000`. It holds a chip-specific signature and a status word. When the status word is blank, the bootloader installs `sys/dremel.bin` from the internal card on the next boot. Marlin's "Firmware update trigger" sets it.
 
 **Volumetric speed.** How much plastic per second the hotend melts, in mm³/s. The stock 3D20 hotend handles about 7.

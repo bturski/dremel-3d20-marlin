@@ -11,6 +11,7 @@ Updated from a real ST-Link recovery on a Coreboard Rev D.
 - Added a multimeter check from each ST-Link wire to its chip leg.
 - Added STM32 ST-Link Utility as the recommended tool for clone ST-Link V2 sticks.
 - Added backing up the bootloader on its own, and the rest of the chip in pieces when a full read crashes.
+- Documented the bootloader version, the start screen image names, and how the update flag area is laid out, from a real bootloader backup.
 - Added connecting while holding reset, and BOOT0 as a last resort. BOOT0 is confirmed to connect to R212 and R213.
 
 ## 2026-10-06

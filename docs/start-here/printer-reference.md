@@ -43,8 +43,10 @@ Boards seen in 3D20 printers include the **FlashForge Coreboard Rev D**. Other r
 
 The card in the slot on the main board is not the one you print from. It holds:
 
-- A `sys` folder. The bootloader looks for `sys/dremel.bin` when an update is requested.
-- Image files for the start screen. If these go missing, you lose the Dremel splash screen but the printer still works.
+- `sys/dremel.bin`, which the bootloader installs when an update is requested.
+- `sys/bosch1.bmp` and `sys/bosch2.bmp`, the start screen images. If these go missing, you lose the splash screen but the printer still works.
+
+These file names come from the text inside the stock bootloader. If the bootloader can't read the card at all, it shows **TF card Fail...** on screen. Reseat the card and check that it isn't damaged.
 
 To remove it, note which way it faces, slide the metal clip toward the USB connector, then flip the clip up. Reverse the steps to put it back.
 
@@ -86,8 +88,22 @@ You only need this table for ST-Link work.
 
 | Address | Size | Contents |
 |---|---|---|
-| `0x08000000` | 48 KB | Bootloader |
-| `0x0800C000` | 16 KB | Update flag (written by Marlin's "Firmware update trigger") |
+| `0x08000000` | 48 KB | Bootloader. About 46 KB is used. The text "Bootloader V1.0" and "Copyright 2014 by Bosch." appears inside it |
+| `0x0800C000` | 16 KB | Update flag area, written by Marlin's "Firmware update trigger" |
 | `0x08010000` | Rest of the chip | Firmware (stock or Marlin) |
 
 The update flag location comes from Marlin's own source code for this printer. The firmware address comes from the maintainer's recovery steps in [discussion #101](https://github.com/moonglow/FlashForge_Marlin/discussions/101).
+
+### Advanced: how the update flag works
+
+This comes from a bootloader backup of a working 3D20, read alongside Marlin's trigger code. The flag area holds two things:
+
+| Address | Bytes | Contents |
+|---|---|---|
+| `0x0800C000` | 28 | A signature: the text `flashforge12` followed by 16 bytes tied to that particular chip |
+| `0x0800C01C` | 4 | A status word. `00 FF 00 FF` on a printer with no update waiting |
+
+Marlin's trigger erases the area and writes back only the 28-byte signature, which leaves the status word blank (`FF FF FF FF`). The best explanation is that a blank status word tells the bootloader to install `sys/dremel.bin` on the next boot, and the bootloader writes `00 FF 00 FF` back when it finishes. We have not tested this directly.
+
+!!! warning "The flag area belongs to one chip"
+    The signature is different on every printer. Never write the `0x0800C000` area from someone else's backup onto your printer. Keep your own backup of it, from your own printer.
