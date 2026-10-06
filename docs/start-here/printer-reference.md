@@ -53,7 +53,7 @@ To remove it, note which way it faces, slide the metal clip toward the USB conne
 
 ### SWD socket
 
-The SWD socket lets an ST-Link write directly to the chip. On the Coreboard Rev D it is the white 3-pin connector next to the USB port, labeled **DMS**. We confirmed with a continuity test that it carries the debug signals, matching the pin order on the [backup firmware wiki page](https://github.com/moonglow/FlashForge_Marlin/wiki/Backup-printer-firmware):
+The SWD socket lets an ST-Link write directly to the chip. On the Coreboard Rev D it is the white 3-pin connector next to the USB port, labeled **DMS**. We confirmed with continuity tests on a real board that it carries the debug signals, matching the pin order on the [backup firmware wiki page](https://github.com/moonglow/FlashForge_Marlin/wiki/Backup-printer-firmware):
 
 | Socket pin | Signal | Chip leg |
 |---|---|---|
@@ -78,7 +78,7 @@ The STM32F407ZG has 144 legs, numbered counterclockwise from the corner with the
 | 109 | SWCLK (PA14) | Debug clock. Should beep to socket pin 1 |
 | 105 | SWDIO (PA13) | Debug data. Should beep to socket pin 2 |
 | 25 | NRST | Reset. Also wired to the **K201** reset button next to the USB port |
-| 138 | BOOT0 | Held at 3.3 V during power-up, the chip runs ST's factory loader instead of the firmware |
+| 138 | BOOT0 | Held at 3.3 V during power-up, the chip runs ST's factory loader instead of the firmware. Wired to resistors R212 and R213, next to that corner of the chip |
 
 ## Flash memory layout
 

@@ -232,7 +232,9 @@ If the bad firmware switches off the debug pins as soon as it starts, connect wh
 
 Holding the chip's **BOOT0** leg (138, marked on the chip photo above) at 3.3 V while it powers up makes it start ST's built-in factory loader instead of anything in flash. The bad firmware never runs, so SWD stays available. The factory loader may also accept a firmware write over the board's own USB port.
 
-We haven't needed or tested this on the 3D20. The legs are 0.5 mm apart, so never hold a wire against them by hand. Find a resistor pad on the BOOT0 line (R212 and R213 sit next to that corner of the chip and are the likely candidates) and confirm it with continuity first. If you try this, please [tell us](../contributing.md) how it went.
+On the Coreboard Rev D, BOOT0 is wired to resistors **R212** and **R213**, next to that corner of the chip (confirmed with a continuity test). Use their pads as the connection point, never the chip legs, which are only 0.5 mm apart. Find which end of each resistor beeps to leg 138. Feed 3.3 V to that end through a 1 kilohm resistor while the board powers up, then remove it.
+
+We haven't needed this route on the 3D20, so it is untested. If you try it, please [tell us](../contributing.md) how it went.
 
 ## Restore the bootloader
 
