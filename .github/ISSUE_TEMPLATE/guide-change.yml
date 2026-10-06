@@ -1,0 +1,22 @@
+name: Guide correction or addition
+description: Something in the guide is wrong, unclear, or missing.
+labels: [documentation]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Page
+      description: Link to the page, or "new page"
+    validations:
+      required: true
+  - type: textarea
+    id: change
+    attributes:
+      label: What should change?
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source
+      description: A link that supports the change, if you have one

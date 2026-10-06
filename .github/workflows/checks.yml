@@ -1,0 +1,24 @@
+name: Checks
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Writing style
+        run: python scripts/check_style.py
+      - name: Profiles match build_profiles.py
+        run: python scripts/build_profiles.py --check
+      - name: Site builds with no broken links
+        run: mkdocs build --strict

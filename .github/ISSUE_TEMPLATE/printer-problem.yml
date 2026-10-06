@@ -1,0 +1,30 @@
+name: Printer problem
+description: Something isn't working, and the guide didn't fix it.
+labels: [help wanted]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, and what you see on the printer screen.
+    validations:
+      required: true
+  - type: input
+    id: firmware
+    attributes:
+      label: Firmware
+      description: Release and file name, for example v0.15.1 dremel_2.0.9.5_01152023.bin
+  - type: input
+    id: slicer
+    attributes:
+      label: Slicer and version
+      description: For example PrusaSlicer 2.9.2 or Cura 5.9
+  - type: input
+    id: page
+    attributes:
+      label: Guide page you were following
+  - type: textarea
+    id: m503
+    attributes:
+      label: M503 output (if the printer runs)
+      render: text

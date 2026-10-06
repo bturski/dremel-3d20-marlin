@@ -1,0 +1,10 @@
+/* Keep wide settings tables readable */
+.md-typeset table:not([class]) {
+  font-size: 0.72rem;
+}
+.md-typeset table:not([class]) td:first-child {
+  white-space: nowrap;
+}
+.md-typeset kbd {
+  font-size: 0.7rem;
+}

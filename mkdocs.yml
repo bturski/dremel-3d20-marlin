@@ -1,0 +1,98 @@
+site_name: Dremel 3D20 Marlin Guide
+site_description: Run Marlin 2 on the Dremel 3D20, set up PrusaSlicer and Cura, and recover from a failed flash.
+site_url: https://bturski.github.io/dremel-3d20-marlin/
+repo_url: https://github.com/bturski/dremel-3d20-marlin
+repo_name: bturski/dremel-3d20-marlin
+edit_uri: edit/main/docs/
+copyright: Text licensed CC BY 4.0. Firmware belongs to its authors.
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.action.edit
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue grey
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue grey
+      accent: deep orange
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/github
+
+extra_css:
+  - assets/extra.css
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.keys
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets:
+      base_path: [docs/downloads/gcode]
+      check_paths: true
+
+plugins:
+  - search
+
+nav:
+  - Home: index.md
+  - Start here:
+      - Before you start: start-here/index.md
+      - What you need: start-here/what-you-need.md
+      - Printer reference: start-here/printer-reference.md
+  - Firmware:
+      - Choose a build: firmware/choose-a-build.md
+      - Install Marlin: firmware/install.md
+      - First setup after install: firmware/first-setup.md
+      - Update Marlin: firmware/update.md
+      - Go back to stock: firmware/revert-to-stock.md
+  - Slicers:
+      - What every slicer needs: slicers/index.md
+      - PrusaSlicer: slicers/prusaslicer.md
+      - UltiMaker Cura: slicers/cura.md
+      - Start and end G-code: slicers/gcode.md
+  - Troubleshooting:
+      - Find your problem: troubleshooting/index.md
+      - Failed flash: troubleshooting/failed-flash.md
+      - ST-Link recovery: troubleshooting/st-link-recovery.md
+      - Print problems: troubleshooting/print-problems.md
+  - Reference:
+      - Downloads: reference/downloads.md
+      - Firmware values: reference/firmware-values.md
+      - Glossary: reference/glossary.md
+      - Sources: reference/sources.md
+  - Contributing: contributing.md
+  - Changelog: changelog.md
+
+validation:
+  omitted_files: warn
+  absolute_links: warn
+  unrecognized_links: warn
+  anchors: warn
