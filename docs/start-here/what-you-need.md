@@ -25,8 +25,9 @@
 |---|---|---|
 | ST-Link programmer | Writes firmware straight to the chip | About $10 to $15. See [ST-Link recovery](../troubleshooting/st-link-recovery.md#buy-an-st-link) |
 | Three female to female jumper wires | Connect the ST-Link to the board | Usually included with clone ST-Link sticks |
-| STM32CubeProgrammer | Free software from ST that drives the ST-Link | [Download from ST](https://www.st.com/en/development-tools/stm32cubeprog.html). Requires a free account |
-| Multimeter | Confirms which pin is ground | A basic one is fine |
+| Programming software | Drives the ST-Link | With a clone ST-Link V2, use [STM32 ST-Link Utility](https://www.st.com/en/development-tools/stsw-link004.html). With a genuine ST-Link, use [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html). Both need a free ST account |
+| Multimeter with a continuity beep | Checks that each wire reaches the right chip leg | A basic one is fine |
+| Clip leads or a soldering iron | Solid contact on the debug connector | Optional, but loose jumper wires are the most common cause of failed connections |
 
 ## Skills
 

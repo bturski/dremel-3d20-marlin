@@ -76,4 +76,4 @@ Once Marlin runs again:
 
 1. Reset settings: `M502` then `M500`.
 2. Redo [First setup](../firmware/first-setup.md).
-3. Make a full backup of the chip with the ST-Link while everything works. See [Back up the chip](st-link-recovery.md#5-back-up-the-chip).
+3. Make a full backup of the chip with the ST-Link while everything works. See [Back up the chip](st-link-recovery.md#6-back-up-the-chip).

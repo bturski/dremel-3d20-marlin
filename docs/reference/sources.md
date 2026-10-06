@@ -40,7 +40,8 @@ Archive links with a date point to a specific saved copy. Links marked **latest*
 
 | Source | Used for | Archive |
 |---|---|---|
-| [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html) | Writing firmware with an ST-Link | [latest](https://web.archive.org/web/https://www.st.com/en/development-tools/stm32cubeprog.html) |
+| [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html) | Writing firmware with a genuine ST-Link | [latest](https://web.archive.org/web/https://www.st.com/en/development-tools/stm32cubeprog.html) |
+| [STM32 ST-Link Utility](https://www.st.com/en/development-tools/stsw-link004.html) | Writing firmware with a clone ST-Link V2 | [latest](https://web.archive.org/web/https://www.st.com/en/development-tools/stsw-link004.html) |
 | [STLINK-V3MINIE](https://www.st.com/en/development-tools/stlink-v3minie.html) | Official ST-Link option | [latest](https://web.archive.org/web/https://www.st.com/en/development-tools/stlink-v3minie.html) |
 | [OpenOCD](https://openocd.org/) | Command line alternative | [latest](https://web.archive.org/web/https://openocd.org/) |
 | [xPack OpenOCD](https://xpack-dev-tools.github.io/openocd-xpack/) | OpenOCD build for Windows | [latest](https://web.archive.org/web/https://xpack-dev-tools.github.io/openocd-xpack/) |
@@ -52,6 +53,7 @@ Some facts come from reading the firmware source or testing files directly, not 
 
 - The update flag address `0x0800C000` comes from the "Firmware update trigger" code in the firmware's `menu_advanced.cpp`.
 - The 3D20 firmware settings on [Firmware values](firmware-values.md) come from `Configuration.h` and `Configuration_adv.h` at the `marlin_2.0.x` branch.
+- The board photos, the DMS connector to chip leg mapping, the tool choice for a clone ST-Link V2, and the crash on large reads all come from a real recovery of a 3D20 with a Coreboard Rev D. See [A real recovery](../troubleshooting/st-link-recovery.md#a-real-recovery).
 - The [firmware tool](downloads.md#firmware-tool) was checked against the original C tool on the v0.15.1 Dremel files.
 - The PrusaSlicer bundle's setting names were checked against PrusaSlicer 2.9.2's source code. The Cura definition's setting names were checked against Cura's `fdmprinter.def.json`.
 

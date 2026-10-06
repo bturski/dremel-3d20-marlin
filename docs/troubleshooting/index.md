@@ -10,6 +10,7 @@ Find what you see in the left column, then follow the link.
 | Screen lights up but stays blank | Bad firmware, or damaged bootloader | [Failed flash: blank screen](failed-flash.md#blank-screen) |
 | Nothing at all: no backlight, no fans | Power problem, not firmware | [Failed flash: no power](failed-flash.md#no-power-at-all) |
 | Dremel updater never says "Printer Detected" | Driver, cable, or no working firmware | [Failed flash: updater can't see the printer](failed-flash.md#updater-cant-see-the-printer) |
+| ST-Link won't connect, or the software crashes while reading | Wiring, tool choice, or read size | [ST-Link recovery: if it won't connect](st-link-recovery.md#if-it-wont-connect) |
 | Put `dremel.bin` on the internal card, nothing happened | The update flag wasn't set | [Failed flash: SD card update ignored](failed-flash.md#sd-card-update-ignored) |
 
 ## Prints go wrong

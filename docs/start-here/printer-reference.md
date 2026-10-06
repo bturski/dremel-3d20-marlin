@@ -53,15 +53,32 @@ To remove it, note which way it faces, slide the metal clip toward the USB conne
 
 ### SWD socket
 
-The SWD socket lets an ST-Link write directly to the chip. The [backup firmware wiki page](https://github.com/moonglow/FlashForge_Marlin/wiki/Backup-printer-firmware) lists this pin order:
+The SWD socket lets an ST-Link write directly to the chip. On the Coreboard Rev D it is the white 3-pin connector next to the USB port, labeled **DMS**. We confirmed with a continuity test that it carries the debug signals, matching the pin order on the [backup firmware wiki page](https://github.com/moonglow/FlashForge_Marlin/wiki/Backup-printer-firmware):
 
-| Socket pin | Signal | Chip pin |
+| Socket pin | Signal | Chip leg |
 |---|---|---|
-| 1 | SWCLK | PA14 (pin 109) |
-| 2 | SWDIO | PA13 (pin 105) |
+| 1 (square pad on the back) | SWCLK | 109 (PA14) |
+| 2 | SWDIO | 105 (PA13) |
 | 3 | GND | Ground |
 
-Always confirm ground with a multimeter before you connect anything. The full steps are in [ST-Link recovery](../troubleshooting/st-link-recovery.md).
+![The DMS connector next to the USB port, with SWCLK, SWDIO, GND and the K201 reset button marked](../assets/images/coreboard-revd-swd-connector.jpg)
+
+![The back of the board, showing the connector's solder joints with the square pin 1 pad](../assets/images/coreboard-revd-back-swd-pads.jpg)
+
+Always check the wiring with a multimeter before you connect anything. The full steps are in [ST-Link recovery](../troubleshooting/st-link-recovery.md).
+
+### Chip legs worth knowing
+
+The STM32F407ZG has 144 legs, numbered counterclockwise from the corner with the small dot. Holding the board so the dot is at the top left: legs 1 to 36 run down the left side, 37 to 72 along the bottom, 73 to 108 up the right side, and 109 to 144 right to left along the top.
+
+![The STM32F407 chip with legs 109, 105, 138 and 25 marked](../assets/images/coreboard-revd-chip-legs.jpg)
+
+| Leg | Signal | Why you'd care |
+|---|---|---|
+| 109 | SWCLK (PA14) | Debug clock. Should beep to socket pin 1 |
+| 105 | SWDIO (PA13) | Debug data. Should beep to socket pin 2 |
+| 25 | NRST | Reset. Also wired to the **K201** reset button next to the USB port |
+| 138 | BOOT0 | Held at 3.3 V during power-up, the chip runs ST's factory loader instead of the firmware |
 
 ## Flash memory layout
 
