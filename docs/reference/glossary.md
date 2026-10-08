@@ -30,6 +30,8 @@
 
 **NRST.** The main chip's reset line (leg 25). The K201 button pulls it low. An ST-Link can hold it low while connecting.
 
+**OctoPrint.** Software that runs on a Raspberry Pi connected to the printer's USB port. It lets you upload, start, watch, and stop prints from a browser. OctoPi is the ready-made Pi image that includes it.
+
 **Origin.** The X0 Y0 point. On the 3D20 under Marlin it's the center of the bed.
 
 **PID tuning.** Teaching the firmware how the heater responds, so it holds a steady temperature. Done with `M303`.

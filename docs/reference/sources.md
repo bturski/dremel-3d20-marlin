@@ -29,6 +29,14 @@ Archive links with a date point to a specific saved copy. Links marked **latest*
 | [PrusaSlicer](https://www.prusa3d.com/page/prusaslicer_424/) | Slicer download | [latest](https://web.archive.org/web/https://www.prusa3d.com/page/prusaslicer_424/) |
 | [UltiMaker Cura](https://ultimaker.com/software/ultimaker-cura/) | Slicer download | [latest](https://web.archive.org/web/https://ultimaker.com/software/ultimaker-cura/) |
 
+## OctoPrint
+
+| Source | Used for | Archive |
+|---|---|---|
+| [OctoPrint download and setup](https://octoprint.org/download/) | Flashing OctoPi with Raspberry Pi Imager, recommended Pi models, first connection | [latest](https://web.archive.org/web/https://octoprint.org/download/) |
+| [Raspberry Pi Imager](https://www.raspberrypi.com/software/) | Writing OctoPi to the microSD card | [latest](https://web.archive.org/web/https://www.raspberrypi.com/software/) |
+| [Prusa: sending files to OctoPrint](https://help.prusa3d.com/en/article/sending-files-to-octoprint-duet_1663/) | PrusaSlicer physical printer and host setup | [latest](https://web.archive.org/web/https://help.prusa3d.com/en/article/sending-files-to-octoprint-duet_1663/) |
+
 ## Marlin
 
 | Source | Used for | Archive |

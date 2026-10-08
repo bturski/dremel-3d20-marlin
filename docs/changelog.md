@@ -4,6 +4,7 @@ Notable changes to this guide. Newest first.
 
 ## 2026-10-08
 
+- Added [OctoPrint on a Raspberry Pi](addons/octoprint.md): flashing OctoPi, printer profile values, connecting PrusaSlicer and Cura, useful plugins, webcam, and troubleshooting.
 - Fixed the PrusaSlicer bundle: added `G92 E0` to the before layer change G-code. Without it, PrusaSlicer refuses to slice when relative E distances are on. Re-import the bundle, or add the line by hand.
 
 ## 2026-10-06 (afternoon)

@@ -80,6 +80,8 @@ nav:
       - PrusaSlicer: slicers/prusaslicer.md
       - UltiMaker Cura: slicers/cura.md
       - Start and end G-code: slicers/gcode.md
+  - Add-ons:
+      - OctoPrint on a Raspberry Pi: addons/octoprint.md
   - Troubleshooting:
       - Find your problem: troubleshooting/index.md
       - Failed flash: troubleshooting/failed-flash.md

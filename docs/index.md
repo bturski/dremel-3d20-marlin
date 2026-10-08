@@ -12,6 +12,7 @@ This guide walks you through the whole job. It covers picking the right firmware
 | Install Marlin for the first time | [Choose a build](firmware/choose-a-build.md), then [Install Marlin](firmware/install.md) |
 | Set up a slicer on a printer that already runs Marlin | [What every slicer needs](slicers/index.md) |
 | Import ready-made profiles | [Downloads](reference/downloads.md) |
+| Print over your network from a Raspberry Pi | [OctoPrint](addons/octoprint.md) |
 | Fix a printer that won't boot after a flash | [Failed flash](troubleshooting/failed-flash.md) |
 | Fix a print problem | [Print problems](troubleshooting/print-problems.md) |
 
