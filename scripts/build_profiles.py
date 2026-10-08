@@ -90,7 +90,9 @@ PRUSA_PRINTER = {
     "wipe": "1", "retract_before_wipe": "70%",
     "retract_lift": "0.2", "retract_lift_above": "0", "retract_lift_below": "0",
     "travel_ramping_lift": "0",
-    "layer_gcode": "", "before_layer_gcode": "",
+    # Relative E (M83) needs an extruder reset at every layer, or PrusaSlicer refuses to slice
+    "before_layer_gcode": ";BEFORE_LAYER_CHANGE\\nG92 E0\\n;[layer_z]",
+    "layer_gcode": "",
 }
 
 # ----------------------------------------------------------------------- Cura

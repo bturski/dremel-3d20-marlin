@@ -37,6 +37,7 @@ Each table shows the PrusaSlicer default, what to change it to, and why. Rows ma
 | General > Thumbnails | G-code thumbnails | Empty | Empty | The screen can't show them |
 | Custom G-code | Start G-code | Short default | [See G-code page](gcode.md#prusaslicer) | **Required.** Safe start, mesh, purge line |
 | Custom G-code | End G-code | Short default | [See G-code page](gcode.md#prusaslicer) | **Required.** Lowers the bed before parking |
+| Custom G-code | Before layer change G-code | `;BEFORE_LAYER_CHANGE` and `;[layer_z]` | Add a `G92 E0` line between them | **Required** with relative E distances. PrusaSlicer won't slice without it |
 | Machine limits | How to apply limits | Varies | Use for time estimate | Firmware keeps control, estimates stay accurate |
 | Machine limits | Max feedrates X, Y, Z, E | Prusa values | 300, 300, 20, 27 | Match the firmware |
 | Machine limits | Max accelerations X, Y, Z, E | Prusa values | 1000, 1000, 150, 4000 | Match the firmware |

@@ -35,6 +35,16 @@ Paste these into **Printer Settings > Custom G-code**. They assume **Use relativ
 
 The end G-code lowers the bed 10 mm below the last layer, capped at the 140 mm limit, before parking. That keeps the nozzle from dragging across the finished part.
 
+**Before layer change G-code**
+
+```gcode
+;BEFORE_LAYER_CHANGE
+G92 E0
+;[layer_z]
+```
+
+With relative extrusion on, PrusaSlicer requires a `G92 E0` at every layer change. It resets the extruder position so tiny rounding errors don't add up over a long print. Without it, PrusaSlicer refuses to slice and shows: *Relative extruder addressing requires resetting the extruder position at each layer to prevent loss of floating point accuracy.*
+
 ## Cura
 
 Paste these into **Preferences > Printers > Machine Settings**. They purge with relative extrusion, then switch back to absolute extrusion, which is Cura's default.

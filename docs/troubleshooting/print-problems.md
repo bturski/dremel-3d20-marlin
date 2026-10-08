@@ -70,6 +70,14 @@ Long retractions pull hot plastic up into the cold part of the hotend. It harden
 - Cura: turn on **Enable Acceleration Control**.
 - Set the slicer's machine limits to match the firmware, so its time estimate is accurate. See [Firmware values](../reference/firmware-values.md).
 
+## PrusaSlicer says relative extruder addressing needs G92 E0
+
+**Message:** *Relative extruder addressing requires resetting the extruder position at each layer to prevent loss of floating point accuracy. Add "G92 E0" to layer_gcode.*
+
+**Cause:** **Use relative E distances** is on, but nothing resets the extruder at each layer. Versions of our PrusaSlicer bundle from before 2026-10-08 had this gap.
+
+**Fix:** Either re-import the [current bundle](../reference/downloads.md#slicer-profiles), or open **Printer Settings > Custom G-code > Before layer change G-code** and add `G92 E0` on its own line. Save the printer preset. See [Start and end G-code](../slicers/gcode.md#prusaslicer).
+
 ## Unknown command messages
 
 **Cause:** Leftover stock Dremel or FlashForge codes such as `M132`, `M6`, or `M108`, or `M73` progress codes Marlin wasn't built for.
